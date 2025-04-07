@@ -25,6 +25,16 @@ app.get('/',async(req,res)=>{
         
     }
 })
+// get single
+app.get('/:id',async(req,res)=>{
+    try {
+        var data=await emp.findById(req.params.id);
+        res.send(data)
+    } catch (error) {
+        res.send(error)
+        
+    }
+})
 //delete
 app.delete ('/:id',async(req,res)=>{
     try {
